@@ -64,15 +64,20 @@ database.ref().on("child_added", function(childSnapshot) {
     console.log(trainNames);
     console.log(trainDestin);
     console.log(trainFrequency);
-    // Calculate the minutes until arrival using hardcore math
+
     // To calculate the minutes till arrival, take the current time in unix subtract the FirstTrain time and find the modulus between the difference and the frequency  
-    var tRemainder = moment().diff(moment.unix(theFirstTrain), "minutes") % trainFrequency;
-    var  tMinutes = trainFrequency - tRemainder;
+    var remainder = moment().diff(moment.unix(theFirstTrain), "minutes") % trainFrequency;
+    var  minutes = trainFrequency - remainder;
 
     // To calculate the arrival time, add the tMinutes to the currrent time
-    var tArrival = moment().add(tMinutes, "m").format("hh:mm A");
+    var arrival = moment().add(minutes, "m").format("hh:mm A");
 
     // Add each train's data into the table 
-    $("#tTable > tbody").append("<tr><td>" + trainNames + "</td><td>" + trainDestin + "</td><td class='min'>" + trainFrequency + "</td><td class='min'>" + tArrival + "</td><td class='min'>" + tMinutes + "</td></tr>");
+    $("#tTable > tbody").append("<tr><td>" + 
+    trainNames + "</td><td>" + 
+    trainDestin + "</td><td class='min'>" + 
+    trainFrequency + "</td><td class='min'>" + 
+    arrival + "</td><td class='min'>" + 
+    minutes + "</td></tr>");
 
 });
