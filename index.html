@@ -30,16 +30,16 @@
      
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title text-center">Current Train Schedule</h3>
+                <h3 class="panel-title"> Current Train Schedule</h3>
             </div>
             <div>
                 <table id="tTable">
                     <tr>
-                        <th><i class="fas fa-train"></i> Train Name</th>
-                        <th><i class="far fa-paper-plane"></i> Destination</th>
-                        <th id="times"><i class="far fa-clock"></i> Frequency (min)</th>
-                        <th id="times"><i class="far fa-calendar-alt"></i> Next Arrival</th>
-                        <th id="times"><i class="fas fa-stopwatch"></i> Minutes Away</th>
+                        <th> Train Name</th>
+                        <th> Destination</th>
+                        <th id="times">Frequency (min)</th>
+                        <th id="times"> Next Arrival</th>
+                        <th id="times">Minutes Away</th>
                     </tr>
                 </table>
             </div>
@@ -53,13 +53,13 @@
                     <form>
                         <label for="nameInput">Train Name</label>
                         <br>
-                        <input type="text" class="form-control" name="trName" id="nameInput" aria-describedby="TrainFormHelp" placeholder="Chattanooga Choo Choo" required>
+                        <input type="text" class="form-control" name="trName" id="nameInput" aria-describedby="TrainFormHelp" placeholder="Corsicana Train" required>
                         <label for="destinationInput">Destination</label>
                         <br>
-                        <input type="text" class="form-control" name="trDest" id="destinationInput" placeholder="Chattanooga, TN" required>
+                        <input type="text" class="form-control" name="trDest" id="destinationInput" placeholder="Hyer Hall, Dallas" required>
                         <br>
                     </form>
-                    <form class="form-inline">
+                    <form>
                         <label for="firstTrainInput">First Train Time</label>
                         <input type="time" class="form-control mx-sm-3 mb-2" name="trTime" id="firstTrainInput" required>
                         <label>Frequency (min)</label>

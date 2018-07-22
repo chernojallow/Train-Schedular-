@@ -1,7 +1,7 @@
 
 .jumbotron {
     text-align: center;
-    background: #4CAF50;
+    background: coral;
 }
 
 #tTable {
@@ -29,7 +29,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: brown;
     color: white;
 }
 
@@ -39,4 +39,9 @@
 
 #tTable #times {
     text-align: center;
+}
+
+
+#trainButton{
+    margin-top:8px;
 }
