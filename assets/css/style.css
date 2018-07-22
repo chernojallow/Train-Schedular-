@@ -1,1 +1,42 @@
 
+.jumbotron {
+    text-align: center;
+    background: #4CAF50;
+}
+
+#tTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tTable td,
+#tTable th {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#tTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tTable tr:hover {
+    background-color: #ddd;
+}
+
+#tTable th {
+    height: 50px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.min {
+    text-align: center;
+}
+
+#tTable #times {
+    text-align: center;
+}

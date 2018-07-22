@@ -10,13 +10,13 @@
   };
   firebase.initializeApp(config);
    // A variable to reference the database
-  var database = firebase.database().ref();
+  var database = firebase.database();
 
 // Button for adding trains
-$("#addTrainBtn").on("click", function() {
+$("#trainButton").on("click", function() {
     event.preventDefault();
     // Grabs user input
-    var trainName = $("#trainNameInput").val().trim();
+    var trainName = $("#nameInput").val().trim();
     var destination = $("#destinationInput").val().trim();
     var firstTrain = moment($("#firstTrainInput").val().trim(), "HH:mm").subtract(10, "years").format("X");
     var frequency = $("#frequencyInput").val().trim();
@@ -30,7 +30,7 @@ $("#addTrainBtn").on("click", function() {
     };
 
     // Uploads train data to the database
-    database.push(train);
+    database.ref().push(train);
 
     // logs everything to console
     console.log(train.name);
@@ -39,20 +39,19 @@ $("#addTrainBtn").on("click", function() {
     console.log(train.frequency);
 
     // Alert
-    alert(train.name + " has been successfully added");
+    alert("Train successfully added");
 
     // Clears all of the text-boxes
-    $("#trainNameInput").val("");
+    $("#nameInput").val("");
     $("#destinationInput").val("");
     $("#firstTrainInput").val("");
     $("#frequencyInput").val("");
-
-    return false;
+     
 });
 
 
 // Create Firebase event for adding trains to the database and a row in the html when a user adds an entry
-database.on("child_added", function(childSnapshot) {
+database.ref().on("child_added", function(childSnapshot) {
     console.log(childSnapshot.val());
 
    // store everything into a variable 
@@ -74,6 +73,6 @@ database.on("child_added", function(childSnapshot) {
     var tArrival = moment().add(tMinutes, "m").format("hh:mm A");
 
     // Add each train's data into the table 
-    $("#trainTable > tbody").append("<tr><td>" + trainNames + "</td><td>" + trainDestin + "</td><td class='min'>" + trainFrequency + "</td><td class='min'>" + tArrival + "</td><td class='min'>" + tMinutes + "</td></tr>");
+    $("#tTable > tbody").append("<tr><td>" + trainNames + "</td><td>" + trainDestin + "</td><td class='min'>" + trainFrequency + "</td><td class='min'>" + tArrival + "</td><td class='min'>" + tMinutes + "</td></tr>");
 
 });
