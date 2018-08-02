@@ -1,17 +1,17 @@
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyAg8qytAHnxQ3qrUqLbGL7yZek8CrJKkPA",
-    authDomain: "chernojallow-b3135.firebaseapp.com",
-    databaseURL: "https://chernojallow-b3135.firebaseio.com",
-    projectId: "chernojallow-b3135",
-    storageBucket: "chernojallow-b3135.appspot.com",
-    messagingSenderId: "928015750585"
+    apiKey: "AIzaSyA9yjY7N1vw0qzYUcPt-59j0VBIwzdh0Wk",
+    authDomain: "group-1-2bbc2.firebaseapp.com",
+    databaseURL: "https://group-1-2bbc2.firebaseio.com",
+    projectId: "group-1-2bbc2",
+    storageBucket: "group-1-2bbc2.appspot.com",
+    messagingSenderId: "597724055602"
   };
-  firebase.initializeApp(config);
-   // A variable to reference the database
-  var database = firebase.database();
+  firebase.initializeApp(config)
 
+   var database = firebase.database();
+ 
 // Button for adding trains
 $("#trainButton").on("click", function() {
     event.preventDefault();
@@ -60,10 +60,10 @@ database.ref().on("child_added", function(childSnapshot) {
     var trainFrequency = childSnapshot.val().frequency;
     var theFirstTrain = childSnapshot.val().firstTrain;
 
-    console.log(theFirstTrain);
-    console.log(trainNames);
-    console.log(trainDestin);
-    console.log(trainFrequency);
+   // console.log(theFirstTrain);
+   // console.log(trainNames);
+   // console.log(trainDestin);
+  //  console.log(trainFrequency);
 
     // To calculate the minutes till arrival, take the current time in unix subtract the FirstTrain time and find the modulus between the difference and the frequency  
     var remainder = moment().diff(moment.unix(theFirstTrain), "minutes") % trainFrequency;
@@ -81,3 +81,5 @@ database.ref().on("child_added", function(childSnapshot) {
     minutes + "</td></tr>");
 
 });
+
+
